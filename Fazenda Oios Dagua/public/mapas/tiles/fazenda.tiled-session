@@ -1,0 +1,49 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1.5
+        },
+        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx": {
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 184.75,
+                "y": 198.25
+            }
+        },
+        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx#geral": {
+            "scaleInDock": 2
+        }
+    },
+    "last.exportedFilePath": "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas",
+    "last.imagePath": "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/tiles",
+    "map.height": 25,
+    "map.lastUsedExportFilter": "Ficheiros de mapa JSON (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 30,
+    "openFiles": [
+        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx"
+    ],
+    "project": "fazenda.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
