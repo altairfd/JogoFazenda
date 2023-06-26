@@ -1,5 +1,4 @@
-import { CONFIG } from "../config";
-
+//Player
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   /** @type {Phaser.Type.Input.Keybord.CursorKey} */
   cursors
@@ -8,7 +7,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     super(scene, x, y, 'Player');
     scene.add.existing(this); //Criando imagem do Player
     scene.physics.add.existing(this); //Criando a fisica
-
     this.init();
   }
 
