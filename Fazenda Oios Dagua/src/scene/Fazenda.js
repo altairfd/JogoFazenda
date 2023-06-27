@@ -10,6 +10,7 @@ export default class Fazenda extends Scene {
   /**@type {Player} */
   player;
   cow;
+  cow2;
 
   layers = {};
 
@@ -82,13 +83,16 @@ export default class Fazenda extends Scene {
   }
 
     createPlayer() {
-      this.player = new Player(this, 22 * 10, 18 * 5)
+      this.player = new Player(this, 22 * 10, 18 * 5);
       this.player.setDepth(4);
     }
 
     createCow() {
-      this.cow = new Cow(this, 10 * 10, 18 * 3)
+      this.cow = new Cow(this, 16 * 24, 16 * 20);
       this.cow.setDepth(4);
+
+      this.cow2 = new Cow(this, 16 * 20, 16 * 22);
+      this.cow2.setDepth(4);
     }
 
     createCollider() {
@@ -99,7 +103,9 @@ export default class Fazenda extends Scene {
         if (name.endsWith('Colision')) {
           this.physics.add.collider(this.player, this.layers[name]);
           this.physics.add.collider(this.cow, this.player);
+          this.physics.add.collider(this.cow2, this.player);
           this.physics.add.collider(this.cow, this.layers[name]);
+          this.physics.add.collider(this.cow2, this.layers[name]);
         }
       }
     }
