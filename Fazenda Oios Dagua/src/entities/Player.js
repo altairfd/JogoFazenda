@@ -1,13 +1,21 @@
+import { CONFIG } from "../config";
+
 //Player
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   /** @type {Phaser.Type.Input.Keybord.CursorKey} */
-  cursors
+  cursors;
+  touch;
+  isAction = false;
 
-  constructor(scene, x, y) {
+  constructor(scene, x, y, touch) {
     super(scene, x, y, 'Player');
+    this.touch = touch;
+
     scene.add.existing(this); //Criando imagem do Player
     scene.physics.add.existing(this); //Criando a fisica
     this.init();
+
+
   }
 
   init() {
@@ -18,19 +26,13 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.cursors = this.scene.input.keyboard.createCursorKeys();
     this.setOrigin(0, .5);
     this.body.setSize(10, 10);
-    this.body.setOffset(20, 15);
+    this.body.setOffset(20, 16);
     this.initAnimations();
     this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
 
     //Moves
-    this.play('idle-right');
-    this.play('idle-up');
-    this.play('idle-left');
     this.play('idle-down');
-    this.play('walk-right');
-    this.play('walk-up');
-    this.play('walk-left');
-    this.play('walk-down');
+    
   }
 
   update() {
@@ -67,6 +69,29 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     } else {
       this.play('walk-' + this.direction, true);
     }
+
+    let tx, ty;
+    let distance = 16;
+
+    switch (this.direction) {
+      case 'down':
+        tx = 0;
+        ty = distance;
+        break;
+      case 'up':
+        tx = 0;
+        ty = -distance + CONFIG.TILE_SIZE;
+        break;
+      case 'right':
+        tx = distance / 2;
+        ty = CONFIG.TILE_SIZE / 2;
+        break;
+      case 'left':
+        tx = -distance / 2
+        ty = CONFIG.TILE_SIZE / 2;
+        break;
+    }
+    this.touch.setPosition(this.x + tx + CONFIG.TILE_SIZE / 2, this.y + ty)
   }
 
   initAnimations() {

@@ -1,8 +1,7 @@
-
-
 //Vaca
 export default class Cow extends Phaser.Physics.Arcade.Sprite {
   clock;
+  touching = false;
 
   constructor(scene, x, y) {
     super(scene, x, y, 'Cow');
@@ -29,6 +28,10 @@ export default class Cow extends Phaser.Physics.Arcade.Sprite {
       callbackScope: this, 
       loop: true
     })
+
+    if (this.touching == true) {
+      this.play('happy')
+    }
   }
 
   initAnimation() {
@@ -44,9 +47,19 @@ export default class Cow extends Phaser.Physics.Arcade.Sprite {
     this.anims.create({
       key: 'eat',
       frames: this.anims.generateFrameNames('Cow', {
-        start: 49, end: 51  
+        start: 40 ,end: 46
       }),
-      frameRate: this.frameRate,
+      frameRate: 2,
+      repeat: -1, 
+      
+    })
+
+    this.anims.create({
+      key: 'eat2',
+      frames: this.anims.generateFrameNames('Cow', {
+        start: 48, end: 51
+      }),
+      frameRate: 8,
       repeat: -1
     })
 
@@ -67,8 +80,17 @@ export default class Cow extends Phaser.Physics.Arcade.Sprite {
       frameRate: 8,
       repeat: -1,
     })
-  }
 
+    this.anims.create({
+      key: 'happy',
+      frame: this.anims.generateFrameNames('Cow', {
+        start: 55, end: 60
+      }),
+      frameRate: 8,
+      repeatt: -1
+    })
+  }
+  
   autoDirect() {
     var autoRun = Math.floor(Math.random() * 5);
     console.log(autoRun)
@@ -81,7 +103,7 @@ export default class Cow extends Phaser.Physics.Arcade.Sprite {
       case 2:
         this.flipX = false;
         this.setVelocityX(0);
-        this.play('eat');
+        this.play('eat2');
         break;
 
       case 3:
