@@ -6,6 +6,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   cursors;
   touch;
   isAction = false;
+  take = false;
 
   constructor(scene, x, y, touch) {
     super(scene, x, y, 'Player');
@@ -29,7 +30,9 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.body.setOffset(20, 16);
     this.initAnimations();
     this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
-
+    if (this.take === true) {
+      console.log('ativou ')
+    }
     //Moves
     this.play('idle-down');
     
@@ -169,6 +172,14 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       }),
       frameRate: this.frameRate,
       repeat: -1
+    })
+
+      this.anims.create({
+      key: 'take',
+      frames: this.anims.generateFrameNumbers('Player', {
+        start: 103, end: 111
+      }),
+      frameRate: this.frameRate,
     })
   }
 }

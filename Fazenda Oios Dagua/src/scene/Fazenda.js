@@ -4,6 +4,7 @@ import Player from '../entities/Player';
 import Cow from '../entities/Cow';
 import Touch from '../entities/Touch';
 import Casa from './Casa';
+import Cow2 from '../entities/Cow2';
 
 
 export default class Fazenda extends Scene {
@@ -13,13 +14,18 @@ export default class Fazenda extends Scene {
   /**@type {Player} */
   player;
   touch;
+  money = 5;
+  moneyText;
 
   grupObject;
+  grupCows;
   isTouching = false;
   cow;
   cow2;
 
   layers = {};
+
+  //Estado arvore
 
   //Regador
   regas = false;
@@ -66,7 +72,6 @@ export default class Fazenda extends Scene {
       frameWidth: CONFIG.TILE_SIZE,
       frameHeight: CONFIG.TILE_SIZE
     })
-
   }
 
   create() {
@@ -77,6 +82,17 @@ export default class Fazenda extends Scene {
     this.createObject();
     this.createCamera();
     this.createCollider();
+
+    //Hud
+    const style = {
+      color: '#fff',
+      fontFamily: 'Fantasy',
+      fontSize: 20
+    };
+    this.moneyText = this.add.text(100, 30, 'R$: ' + this.money + ' ,00', style);
+    this.moneyText.setScrollFactor(0);
+    this.moneyText.setOrigin(0.5, 0);
+    this.moneyText.setDepth(6)
   }
 
   update() {
@@ -122,14 +138,14 @@ export default class Fazenda extends Scene {
     this.cow = new Cow(this, 16 * 24, 16 * 20);
     this.cow.setDepth(4);
 
-    this.cow2 = new Cow(this, 16 * 20, 16 * 22);
+    this.cow2 = new Cow2(this, 16 * 20, 16 * 22);
     this.cow2.setDepth(4);
 
   }
 
   createObject() {
     this.grupObject = this.physics.add.group();
-    const objects = this.map.createFromObjects('Terreno', 'Terreno', 'Terreno', 'Terreno', 'Terreno', 'Terreno', 'Terreno', 'Terreno', {
+    const objects = this.map.createFromObjects('Terreno', 'Terreno', {
       name: 'Maca', name: 'semiMaca', name: 'Regas', name: 'Estelar', name: 'semiEstelar', name: 'Cenoura', name: 'semiCenoura', name: 'Porta'
     });
 
@@ -147,6 +163,10 @@ export default class Fazenda extends Scene {
       obj.prop = this.map.objects[0].objects[i].properties;
 
       this.grupObject.add(obj);
+
+      this.grupCows = this.physics.add.group({
+        classType: Cow
+      })
 
     }
   }
@@ -184,7 +204,6 @@ export default class Fazenda extends Scene {
       this.isTouching = false;
       return;
     }
-
 
     //Mudando a cena para CASA
     if (this.player.isAction) {
@@ -360,7 +379,7 @@ export default class Fazenda extends Scene {
       if (object.name === 'Cenoura' && this.semiCenoura === true) {
         const plantCenoura = this.physics.add.sprite(object.x, object.y, 'geral')
           .setDepth(0)
-          plantCenoura.setFrame(584)
+        plantCenoura.setFrame(584)
         this.cenouraPlantada = true;
         this.cenouraRegada = false;
         console.log('plantou cenoura')
@@ -374,7 +393,7 @@ export default class Fazenda extends Scene {
         setTimeout(() => {
           const plantCenoura = this.physics.add.sprite(object.x, object.y, 'geral')
             .setDepth(0)
-            plantCenoura.setFrame(585);
+          plantCenoura.setFrame(585);
           console.log('cenoura regada')
         }, 3000);
         this.cenouraPlantada = true;
@@ -390,7 +409,7 @@ export default class Fazenda extends Scene {
         setTimeout(() => {
           const plantCenoura = this.physics.add.sprite(object.x, object.y, 'geral')
             .setDepth(0)
-            plantCenoura.setFrame(586);
+          plantCenoura.setFrame(586);
           console.log('cenoura segunda fase')
         }, 3000);
         this.cenouraPlantada = true;
@@ -406,12 +425,12 @@ export default class Fazenda extends Scene {
         setTimeout(() => {
           const plantCenoura = this.physics.add.sprite(object.x, object.y, 'geral')
             .setDepth(0)
-            plantCenoura.setFrame(587);
+          plantCenoura.setFrame(587);
           console.log('cenoura segunda fase')
         }, 3000);
         this.cenouraPlantada = true;
         this.regas = false;
-        this.cenouraState = 2;
+        this.cenouraState = 3;
       }
     }
   }

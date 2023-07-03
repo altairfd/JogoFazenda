@@ -3,23 +3,40 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx",
     "expandedProjectPaths": [
     ],
     "fileStates": {
         "": {
             "scaleInDock": 1.5,
-            "scaleInEditor": 1.5
+            "scaleInEditor": 1
         },
         "#geral": {
             "scaleInDock": 1.5
         },
-        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/Casa.tmx": {
-            "scale": 2,
-            "selectedLayer": 1,
+        "C:/Users/altai/OneDrive/Área de Trabalho/Clona Jjogos Digitais/jogodafazenda/public/mapas/tiles/fazenda.tmx": {
+            "scale": 2.1374999999999997,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 260.75,
-                "y": 203
+                "x": 240.23391812865503,
+                "y": 200.23391812865503
+            }
+        },
+        "C:/Users/altai/OneDrive/Área de Trabalho/Clona Jjogos Digitais/jogodafazenda/public/mapas/tiles/fazenda.tmx#geral": {
+            "scaleInDock": 1
+        },
+        "C:/Users/altai/OneDrive/Área de Trabalho/Clona Jjogos Digitais/jogodafazenda/public/mapas/tiles/fazenda.tmx#vacas_anim": {
+            "scaleInDock": 1
+        },
+        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/Casa.tmx": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 2,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 239.75,
+                "y": 199.75
             }
         },
         "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/Casa.tmx#geral": {
@@ -30,10 +47,10 @@
                 5
             ],
             "scale": 2,
-            "selectedLayer": 4,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 204.25,
-                "y": 168.5
+                "x": 188,
+                "y": 198.5
             }
         },
         "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx#geral": {
@@ -54,11 +71,13 @@
     "map.tileWidth": 16,
     "map.width": 30,
     "openFiles": [
-        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx"
+        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx",
+        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/Casa.tmx"
     ],
     "project": "fazenda.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/Casa.tmx",
         "C:/Users/altai/OneDrive/Área de Trabalho/Jogos Digitais/Fazenda/Fazenda Oios Dagua/public/mapas/fazenda.tmx"
     ],
     "tileset.embedInMap": true,

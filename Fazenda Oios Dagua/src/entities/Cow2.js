@@ -1,9 +1,9 @@
-export default class Cow extends Phaser.Physics.Arcade.Sprite {
+export default class Cow2 extends Phaser.Physics.Arcade.Sprite {
   clock;
   touching = false;
 
   constructor(scene, x, y) {
-    super(scene, x, y, 'Cow');
+    super(scene, x, y, 'Cow2');
     scene.add.existing(this) //Criando imagem da vaca
     scene.physics.add.existing(this); //Criando a fisica
     this.init();
@@ -37,26 +37,16 @@ export default class Cow extends Phaser.Physics.Arcade.Sprite {
     this.anims.create({
       key: 'idle',
       frames: this.anims.generateFrameNames('Cow', {
-        start: 0, end: 2
+        start: 64, end: 66
       }),
       frameRate: this.frameRate,
       repeat: -1,
     })
 
     this.anims.create({
-      key: 'eat',
-      frames: this.anims.generateFrameNames('Cow', {
-        start: 40 ,end: 46
-      }),
-      frameRate: 2,
-      repeat: -1, 
-      
-    })
-
-    this.anims.create({
       key: 'eat2',
       frames: this.anims.generateFrameNames('Cow', {
-        start: 48, end: 51
+        start: 112, end: 114
       }),
       frameRate: 8,
       repeat: -1
@@ -65,7 +55,7 @@ export default class Cow extends Phaser.Physics.Arcade.Sprite {
     this.anims.create({
       key: 'right-walk',
       frames: this.anims.generateFrameNames('Cow', {
-        start: 8, end: 14
+        start: 72, end: 78
       }),
       frameRate: 8,
       repeat: -1,
@@ -114,7 +104,7 @@ export default class Cow extends Phaser.Physics.Arcade.Sprite {
         
       case 4:
         this.setVelocityX(0);
-        this.play('left-walk');
+        this.play('right-walk');
         this.flipX = true;
         this.setVelocityX(-8);
         break;
